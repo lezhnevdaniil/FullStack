@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+  font-family: 'Open sans', sans-serif;
+}
+
+h1 {
+  font-style: italic;
+  font-size: 48px;
+  font-weight: 300;
+  width: 60vw;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(226,243,255);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.block {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+}
+
+#addButton {
+  width: 9vw;
+  height: 4.6vh;
+  margin-top: auto;
+  background-color: rgb(121,202,171);
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+input {
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#sum {
+  width: 60vw;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+}
+
+.total {
+  margin-right: 0.3vw;
+}
+
+.rubl {
+  margin-left: 0.3vw;
+
+}
+
+#place {
+  width: 25vw;
+}
+
+#price {
+  width: 18vw;
+}
+
+.purch-container {
+  /* width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between; */
+  width: 33%;
+}
+
+#info {
+  width: 60vw;
+  font-size: 25px;
+  
+}
+
+.containerMain {
+  width: 60vw;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3vh;
+}
+
+.inp {
+  margin: 0px 1vw 0 1vw;
+  width: 15vw;
+  height: 3vh;
+  font-family: 'Open sans', sans-serif;
+  font-size: 22px;
+}
+
+.containerChild {
+  width: 25vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerChild2 {
+  width: auto;
+  align-self: center;
+  display: flex;
+}
+
+.block-wrap1 {
+  width: 26vw;
+}
+
+.block-wrap2 {
+  width: 19vw;
+}
+
+#edit {
+  width: 7%;
+  height: 7%;
+  border-radius: 50%;
+}
+
+.textPlace {
+  width: auto;
+}
+
+.textDate {
+  width: 40%;
+}
+
+.textPrice {
+  width: 40%;
+  text-align: center;
+}
+
+.purch-container {
+  width: 26vw;
+  white-space: nowrap;
+}
+
+.purch-container2 {
+  display: flex;
+  width: auto;
+}
+
+.fa-solid {
+  align-self: center;
+  font-size: 3vh;
+} 
+
+.fa-trash {
+  margin-left: 1vw;
+}
+
+@media (max-width: 1160px) {
+  .block {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .block-wrap1 {
+    width: 100%;
+  }
+
+  .block-wrap2 {
+    width: 100%;
+  }
+
+  #addButton {
+    width: auto;
+    height: 4.6vh;
+    margin-top: 2vw;
+    background-color: rgb(121,202,171);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    align-self: flex-end;
+  }
+
+  .containerChild {
+    flex-direction: column;
+  }
+
+  .containerChild2 {
+    align-self: end;
+    width: 8vh;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .purch-container2 {
+    flex-direction:column;
+  }
+
+  .textDate {
+    width: 100%;
+    margin: 0;
+    text-align: end;
+  }
+
+  .textPrice {
+    width: 100%;
+    margin: 1vh 0 2vh 0;
+    text-align: end;
+  }
+
+  #place {
+    width: 96%;
+  }
+
+  #price {
+    width: 96%;
+  }
+}
+
+@media (max-width: 990px) {
+  #info {
+    width: 60vw;
+    font-size: 22px;
+  }
+  .containerChild2 {
+    align-self: end;
+  }
+}
+
+@media (max-width: 790px) {
+  h1 {
+    font-style: italic;
+    font-size: 37px;
+    font-weight: 300;
+    width: 70vw;
+  }
+
+  .inp {
+    font-size: 17px;
+    margin: 1px;
+    width: 15vw;
+    padding: 2vw;
+  }
+
+  .block {
+    width: 70vw;
+  }
+
+  #addButton {
+    font-size: 18px;
+  }
+
+  #sum {
+    font-size: 21px;
+    width: 70vw;
+  }
+
+  .textPlace {
+    width: 30%;
+  }
+  #info {
+    width: 70vw;
+    font-size: 19px;
+  }
+  .textPlace {
+    width: 30%;
+    white-space: nowrap;
+  }
+
+  .containerMain {
+    width: 70vw;
+    font-size: 22px;
+  }
+
+  .purch-container {
+    width: 50%;
+  }
+
+  #edit {
+    width: 12%;
+    height: 12%;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 620px) {
+  .textPlace {
+    width: 30%;
+  }
+  #info {
+    font-size: 19px;
+  }
+  .textPlace {
+    width: 30%;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 580px) {
+  h1 {
+    font-style: italic;
+    font-weight: 300;
+    width: 90vw;
+  }
+
+  .block {
+    width: 90vw;
+  }
+
+  #addButton {
+    font-size: 18px;
+  }
+
+  #sum {
+    font-size: 21px;
+    width: 90vw;
+  }
+
+  .textPlace {
+    width: 30%;
+  }
+  #info {
+    font-size: 19px;
+  }
+  .textPlace {
+    width: 30%;
+    white-space: nowrap;
+  }
+
+  #info {
+    width: 90vw;
+  }
+
+  .containerMain {
+   width: 90vw;
+   font-size: 22px;
+  }
+
+  .purch-container {
+    width: 50%;
+  }
+
+  .inp {
+    font-size: 17px;
+    margin: 1px;
+    width: 23vw;
+    padding: 2vw;
+  }
+}
+
+@media (max-width: 427px) {
+  .containerMain {
+    font-size: 20px;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .textPlace {
+    width: auto;
+  }
+
+  .containerChild {
+    width: auto;
+  }
+
+  #sum {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 375px) {
+  .textPlace {
+    width: auto;
+    white-space: normal;
+  }
+
+  .containerChild {
+    width: auto;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .containerChild {
+    width: auto;
+  }
+
+  .containerMain {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inp {
+    font-size: 19px;
+    width: 70vw;
+    margin-bottom: 2vh;
+  }
+
+  .textPrice {
+    margin: 2vh 0 3vh 0;
+    text-align: center;
+  }
+  
+  .containerChild2 {
+    align-self: center;
+  }
+}
+
