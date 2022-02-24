@@ -1,4 +1,4 @@
-const Task = require("../../db/models/task/index");
+const Purch = require('../../db/models/task/index');
 
 module.exports.getAllPurchs = (req, res) => {
   Purch.find().then((result) => {
@@ -9,40 +9,32 @@ module.exports.getAllPurchs = (req, res) => {
 };
 
 module.exports.createNewPurch = (req, res) => {
-  res.set("Access-Control-Allow-Origin", "*");
+  res.set('Access-Control-Allow-Origin', '*');
   const body = req.body;
-  const {place, date, price} = body;
-  if (body.hasOwnProperty('place') && body.hasOwnProperty("date") && body.hasOwnProperty("price")) {
-    const purch = new Purch({
-      place,
-      date,
-      price
-    });
-    purch.save().then((result) => {
+  if (body.hasOwnProperty('place') && body.hasOwnProperty('date') && body.hasOwnProperty('price')) {
+    const purch = new Purch(body);
+    purch.save().then(result => {
       res.send(result);
     }).catch((err) => res.send(err));
   }
 };
 
 module.exports.changePurchInfo = (req, res) => {
-  res.set("Access-Control-Allow-Origin", "*");
+  res.set('Access-Control-Allow-Origin', '*');
   const body = req.body;
-  let {place, date, price} = body;
-  const id = {_id: body._id}
-  if (!price) {
-    price = 0;
+  console.log(body.date);
+  if (!body.price) {
+    body.price = 0;
   };
-  Purch.updateOne(id, {
-    $set: {
-      place,
-      date,
-      price
-    }
+  Purch.updateOne(body.id, {
+    $set: body
   }).then(result => {
       res.send(result);
     }).catch(err => {
     res.send(err);
   })
+  console.log(body);
+
 };
 
 module.exports.deletePurch = (req, res) => {
@@ -52,6 +44,6 @@ module.exports.deletePurch = (req, res) => {
       res.send(result);
     }).catch((err) => { 
       res.send(err);
-    })
+    });
   }
 };
