@@ -1,13 +1,12 @@
 let allPurchs = [];
-let now = new Date();
-now = String(now.getDate()).padStart(2, '0') + '.' + String(now.getMonth() + 1).padStart(2, '0') + '.' + now.getFullYear();
+let DateNow = new Date();
+
 const url = 'http://localhost:8000';
-window.onload = async function init () {
-  place = document.getElementById('place');
-  price = document.getElementById('price');
+window.onload = async () => {
+  const place = document.getElementById('place');
+  const price = document.getElementById('price');
   place.addEventListener('change', updatePlace);
   price.addEventListener('change', updatePrice);
-  
   render();
 }
 
@@ -31,16 +30,14 @@ const clickAddButton = async () => {
         },
         body: JSON.stringify({
           place: valuePlace,
-          date: now,
+          date: DateNow,
           price: valuePrice
         })
       });
-    
       const result = await resp.json();
       allPurchs.push(result);
       place.value = '';
       price.value = '';
-      
       render();
     }
   } else {
@@ -49,7 +46,6 @@ const clickAddButton = async () => {
 }
 
 const render = async () => {
-
   const resp = await fetch(`${url}/allPurchs`, {
     method: 'GET'
   });
@@ -67,17 +63,17 @@ const render = async () => {
     initValue += Number(allPurchs[index].price)
     const containerMain = document.createElement('div');
     containerMain.className = 'containerMain';
-    const container1 = document.createElement('div');
-    const container2 = document.createElement('div');
-    container1.className = 'purch-container';
-    container2.className = 'purch-container2';
+    const containerOne = document.createElement('div');
+    const containerTwo = document.createElement('div');
+    containerOne.className = 'purch-container';
+    containerTwo.className = 'purch-containerTwo';
     content.appendChild(containerMain);
     const textPlace = document.createElement('p');
     textPlace.className = 'textPlace'
-    textPlace.innerText = index + 1 + ') Магазин ' + '"' + item.place + '"';
+    textPlace.innerText = index + 1 + ') ' + '"' + item.place + '"';
     const textDate = document.createElement('p');
     textDate.className = 'textDate'
-    textDate.innerText = item.date;
+    textDate.innerText = item.date.slice(0, 10).split('-').reverse().join('.');
     const textPrice = document.createElement('p');
     textPrice.className = 'textPrice'
     textPrice.innerText = item.price + ' p.';
@@ -85,25 +81,23 @@ const render = async () => {
     rubl.innerText = 'р.'
     rubl.className = 'rubl';
     const containerChild = document.createElement('div');
-    const containerChild2 = document.createElement('div');
-    const containerChild3 = document.createElement('div');
-    containerChild.className = 'containerChild3';
+    const containerChildTwo = document.createElement('div');
+    const containerChildThree = document.createElement('div');
+    containerChild.className = 'containerChildThree';
     containerChild.className = 'containerChild';
-    containerChild2.className = 'containerChild2';
-    //containerMain.appendChild(container2);
-    //containerMain.appendChild(container1);
-    containerChild3.appendChild(textPlace);
+    containerChildTwo.className = 'containerChildTwo';
+    containerChildThree.appendChild(textPlace);
     containerChild.appendChild(textDate);
     containerChild.appendChild(textPrice);
-    container1.appendChild(containerChild3);
-    container2.appendChild(containerChild);
-    container2.appendChild(containerChild2);
-    containerMain.appendChild(container1);
-    containerMain.appendChild(container2);
+    containerOne.appendChild(containerChildThree);
+    containerTwo.appendChild(containerChild);
+    containerTwo.appendChild(containerChildTwo);
+    containerMain.appendChild(containerOne);
+    containerMain.appendChild(containerTwo);
     textPrice.appendChild(rubl);
     const imageEdit = document.createElement('i');
     imageEdit.className = 'fa-solid fa-pen';
-    containerChild2.appendChild(imageEdit);
+    containerChildTwo.appendChild(imageEdit);
     const sum = document.getElementById('sum');
     while(sum.firstChild) {
       sum.removeChild(sum.firstChild);
@@ -117,17 +111,13 @@ const render = async () => {
     sum.appendChild(sumP);
     sum.appendChild(rubl);
     imageEdit.onclick = () => { 
-      containerMain.removeChild(container1);
-      containerMain.removeChild(container2);
-      //container2.removeChild(textPrice);
-      //container2.removeChild(imageEdit);
-      //container2.removeChild(imageDelete);
-      onclickEdit(item.place, item.date, item.price, containerMain, item._id);
+      containerMain.removeChild(containerOne);
+      containerMain.removeChild(containerTwo);
+      onclickEdit(item, containerMain);
     }
     const imageDelete = document.createElement('i');
     imageDelete.className = 'fa-solid fa-trash';
-    //container1.appendChild(imageDelete);
-    containerChild2.appendChild(imageDelete);
+    containerChildTwo.appendChild(imageDelete);
     imageDelete.onclick = () => {
       onclickDelete(item._id);
     }
@@ -138,23 +128,23 @@ const onclickDelete = async (id) => {
   const resp = await fetch(`${url}/deletePurch?id=${id}`, {
     method: 'DELETE'
   });
-
   render();
 }
 
-const onclickEdit = (place, date, price, container, id) => {
+const onclickEdit = (item, container) => {
   const newPlace = document.createElement('input');
   const newDate = document.createElement('input');
   const newPrice = document.createElement('input');
   newPlace.className = 'inp';
   newDate.className = 'inp';
+  newDate.type = 'date'
   newPrice.className = 'inp';
-  newPlace.value = place;
-  newDate.value = date;
-  newPrice.value = price;
-  newPlace.id = `placeId-${id}`;
-  newDate.id = `dateId-${id}`;
-  newPrice.id = `priceId-${id}`;
+  newPlace.value = item.place;
+  newDate.value = item.date;
+  newPrice.value = item.price;
+  newPlace.id = `placeId-${item._id}`;
+  newDate.id = `dateId-${item._id}`;
+  newPrice.id = `priceId-${item._id}`;
   container.appendChild(newPlace);
   container.appendChild(newDate);
   container.appendChild(newPrice);
@@ -163,7 +153,7 @@ const onclickEdit = (place, date, price, container, id) => {
   editButton.src = 'img/images.jpeg'
   container.appendChild(editButton);
   editButton.onclick = () => {
-    editPurch(id);
+    editPurch(item._id);
   }
 };
 
@@ -184,7 +174,5 @@ const editPurch = async (id) => {
       price: newPrice.value
     })
   })
-
   render();
 }
-

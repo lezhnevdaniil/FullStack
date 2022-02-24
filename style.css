@@ -13,7 +13,7 @@ h1 {
 }
 
 body {
-  background-color: rgb(226,243,255);
+  background-color: rgb(226, 243, 255);
 }
 
 .main {
@@ -33,7 +33,7 @@ body {
   width: 9vw;
   height: 4.6vh;
   margin-top: auto;
-  background-color: rgb(121,202,171);
+  background-color: rgb(121, 202, 171);
   border: none;
   border-radius: 5px;
   font-size: 20px;
@@ -60,7 +60,6 @@ input {
 
 .rubl {
   margin-left: 0.3vw;
-
 }
 
 #place {
@@ -72,17 +71,16 @@ input {
 }
 
 .purch-container {
-  /* width: 100%;
-  height: auto;
-  display: flex;
-  justify-content: space-between; */
   width: 33%;
 }
 
 #info {
   width: 60vw;
   font-size: 25px;
-  
+}
+
+.purch-containerTwo {
+  display: flex;
 }
 
 .containerMain {
@@ -107,17 +105,17 @@ input {
   justify-content: space-around;
 }
 
-.containerChild2 {
+.containerChildTwo {
   width: auto;
   align-self: center;
   display: flex;
 }
 
-.block-wrap1 {
+.block-wrapOne {
   width: 26vw;
 }
 
-.block-wrap2 {
+.block-wrapTwo {
   width: 19vw;
 }
 
@@ -168,11 +166,16 @@ input {
     text-align: center;
   }
 
-  .block-wrap1 {
+  .purch-containerTwo {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .block-wrapOne {
     width: 100%;
   }
 
-  .block-wrap2 {
+  .block-wrapTwo {
     width: 100%;
   }
 
@@ -180,38 +183,30 @@ input {
     width: auto;
     height: 4.6vh;
     margin-top: 2vw;
-    background-color: rgb(121,202,171);
+    background-color: rgb(121, 202, 171);
     border: none;
     border-radius: 5px;
     font-size: 20px;
     align-self: flex-end;
   }
 
-  .containerChild {
-    flex-direction: column;
-  }
-
-  .containerChild2 {
-    align-self: end;
+  .containerChildTwo {
     width: 8vh;
     display: flex;
     justify-content: space-between;
-  }
-
-  .purch-container2 {
-    flex-direction:column;
   }
 
   .textDate {
     width: 100%;
     margin: 0;
     text-align: end;
+    align-self: center;
   }
 
   .textPrice {
     width: 100%;
-    margin: 1vh 0 2vh 0;
-    text-align: end;
+    margin: 0;
+    align-self: center;
   }
 
   #place {
@@ -224,16 +219,6 @@ input {
 }
 
 @media (max-width: 990px) {
-  #info {
-    width: 60vw;
-    font-size: 22px;
-  }
-  .containerChild2 {
-    align-self: end;
-  }
-}
-
-@media (max-width: 790px) {
   h1 {
     font-style: italic;
     font-size: 37px;
@@ -262,14 +247,26 @@ input {
   }
 
   .textPlace {
-    width: 30%;
+    width: auto;
   }
+
+  .textDate {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .textPrice {
+    width: auto;
+    margin-right: 10px;
+  }
+
   #info {
     width: 70vw;
     font-size: 19px;
   }
+
   .textPlace {
-    width: 30%;
+    width: auto;
     white-space: nowrap;
   }
 
@@ -279,7 +276,11 @@ input {
   }
 
   .purch-container {
-    width: 50%;
+    width: auto;
+  }
+
+  .containerChild {
+    width: auto;
   }
 
   #edit {
@@ -289,20 +290,26 @@ input {
   }
 }
 
-@media (max-width: 620px) {
-  .textPlace {
-    width: 30%;
-  }
+@media (max-width: 750px) {
   #info {
     font-size: 19px;
   }
+
+  .textDate {
+    margin-right: 7px;
+  }
+
+  .textPrice {
+    margin-right: 7px;
+  }
+  
   .textPlace {
-    width: 30%;
+    width: auto;
     white-space: nowrap;
   }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 595px) {
   h1 {
     font-style: italic;
     font-weight: 300;
@@ -325,9 +332,7 @@ input {
   .textPlace {
     width: 30%;
   }
-  #info {
-    font-size: 19px;
-  }
+
   .textPlace {
     width: 30%;
     white-space: nowrap;
@@ -335,6 +340,7 @@ input {
 
   #info {
     width: 90vw;
+    font-size: 19px;
   }
 
   .containerMain {
@@ -343,7 +349,13 @@ input {
   }
 
   .purch-container {
-    width: 50%;
+    width: auto;
+  }
+
+  .containerChild {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
   }
 
   .inp {
@@ -354,29 +366,7 @@ input {
   }
 }
 
-@media (max-width: 427px) {
-  .containerMain {
-    font-size: 20px;
-  }
-
-  .purch-container {
-    width: auto;
-  }
-
-  .textPlace {
-    width: auto;
-  }
-
-  .containerChild {
-    width: auto;
-  }
-
-  #sum {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 375px) {
+@media (max-width: 465px) {
   .textPlace {
     width: auto;
     white-space: normal;
@@ -384,10 +374,16 @@ input {
 
   .containerChild {
     width: auto;
+    margin-bottom: 21px;
   }
 
   .purch-container {
     width: auto;
+  }
+
+  .purch-containerTwo {
+    display: flex;
+    flex-direction: column;
   }
 
   .containerChild {
@@ -406,13 +402,50 @@ input {
     width: 70vw;
     margin-bottom: 2vh;
   }
+  
+  .containerChildTwo {
+    align-self: center;
+  }
+}
 
-  .textPrice {
-    margin: 2vh 0 3vh 0;
-    text-align: center;
+@media (max-width: 400px) {
+  .textPlace {
+    width: auto;
+    white-space: normal;
+  }
+
+  .containerChild {
+    width: auto;
+    margin-bottom: 21px;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .purch-containerTwo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerChild {
+    width: auto;
+  }
+
+  .containerMain {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inp {
+    font-size: 19px;
+    width: 70vw;
+    margin-bottom: 2vh;
   }
   
-  .containerChild2 {
+  .containerChildTwo {
     align-self: center;
   }
 }
