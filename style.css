@@ -1,0 +1,452 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+*{
+  font-family: 'Open sans', sans-serif;
+}
+
+h1 {
+  font-style: italic;
+  font-size: 48px;
+  font-weight: 300;
+  width: 60vw;
+  text-align: center;
+}
+
+body {
+  background-color: rgb(226, 243, 255);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.block {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+}
+
+#addButton {
+  width: 9vw;
+  height: 4.6vh;
+  margin-top: auto;
+  background-color: rgb(121, 202, 171);
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+input {
+  font-size: 17px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#sum {
+  width: 60vw;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 25px;
+}
+
+.total {
+  margin-right: 0.3vw;
+}
+
+.rubl {
+  margin-left: 0.3vw;
+}
+
+#place {
+  width: 25vw;
+}
+
+#price {
+  width: 18vw;
+}
+
+.purch-container {
+  width: 33%;
+}
+
+#info {
+  width: 60vw;
+  font-size: 25px;
+}
+
+.purch-containerRight {
+  display: flex;
+}
+
+.containerMain {
+  width: 60vw;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3vh;
+}
+
+.inp {
+  margin: 0px 1vw 0 1vw;
+  width: 15vw;
+  height: 3vh;
+  font-family: 'Open sans', sans-serif;
+  font-size: 22px;
+}
+
+.containerDatePrice {
+  width: 25vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+.containerChildButtons {
+  width: auto;
+  align-self: center;
+  display: flex;
+}
+
+.block-wrapOne {
+  width: 26vw;
+}
+
+.block-wrapTwo {
+  width: 19vw;
+}
+
+#edit {
+  width: 7%;
+  height: 7%;
+  border-radius: 50%;
+}
+
+.textPlace {
+  width: auto;
+}
+
+.textDate {
+  width: 40%;
+}
+
+.textPrice {
+  width: 40%;
+  text-align: center;
+}
+
+.purch-container {
+  width: 26vw;
+  white-space: nowrap;
+}
+
+.purch-container2 {
+  display: flex;
+  width: auto;
+}
+
+.fa-solid {
+  align-self: center;
+  font-size: 3vh;
+} 
+
+.fa-trash {
+  margin-left: 1vw;
+}
+
+@media (max-width: 1160px) {
+  .block {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .purch-containerRight {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .block-wrapOne {
+    width: 100%;
+  }
+
+  .block-wrapTwo {
+    width: 100%;
+  }
+
+  #addButton {
+    width: auto;
+    height: 4.6vh;
+    margin-top: 2vw;
+    background-color: rgb(121, 202, 171);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    align-self: flex-end;
+  }
+
+  .containerChildButtons {
+    width: 8vh;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .textDate {
+    width: 100%;
+    margin: 0;
+    text-align: end;
+    align-self: center;
+  }
+
+  .textPrice {
+    width: 100%;
+    margin: 0;
+    align-self: center;
+  }
+
+  #place {
+    width: 96%;
+  }
+
+  #price {
+    width: 96%;
+  }
+}
+
+@media (max-width: 990px) {
+  h1 {
+    font-style: italic;
+    font-size: 37px;
+    font-weight: 300;
+    width: 70vw;
+  }
+
+  .inp {
+    font-size: 17px;
+    margin: 1px;
+    width: 15vw;
+    padding: 2vw;
+  }
+
+  .block {
+    width: 70vw;
+  }
+
+  #addButton {
+    font-size: 18px;
+  }
+
+  #sum {
+    font-size: 21px;
+    width: 70vw;
+  }
+
+  .textPlace {
+    width: auto;
+  }
+
+  .textDate {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  .textPrice {
+    width: auto;
+    margin-right: 10px;
+  }
+
+  #info {
+    width: 70vw;
+    font-size: 19px;
+  }
+
+  .textPlace {
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .containerMain {
+    width: 70vw;
+    font-size: 22px;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .containerDatePrice {
+    width: auto;
+  }
+
+  #edit {
+    width: 12%;
+    height: 12%;
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 750px) {
+  #info {
+    font-size: 19px;
+  }
+
+  .textDate {
+    margin-right: 7px;
+  }
+
+  .textPrice {
+    margin-right: 7px;
+  }
+  
+  .textPlace {
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 595px) {
+  h1 {
+    font-style: italic;
+    font-weight: 300;
+    width: 90vw;
+  }
+
+  .block {
+    width: 90vw;
+  }
+
+  #addButton {
+    font-size: 18px;
+  }
+
+  #sum {
+    font-size: 21px;
+    width: 90vw;
+  }
+
+  .textPlace {
+    width: 30%;
+  }
+
+  .textPlace {
+    width: 30%;
+    white-space: nowrap;
+  }
+
+  #info {
+    width: 90vw;
+    font-size: 19px;
+  }
+
+  .containerMain {
+   width: 90vw;
+   font-size: 22px;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .containerDatePrice {
+    width: auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .inp {
+    font-size: 17px;
+    margin: 1px;
+    width: 23vw;
+    padding: 2vw;
+  }
+}
+
+@media (max-width: 465px) {
+  .textPlace {
+    width: auto;
+    white-space: normal;
+  }
+
+  .containerDatePrice {
+    width: auto;
+    margin-bottom: 21px;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .purch-containerRight {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerDatePrice {
+    width: auto;
+  }
+
+  .containerMain {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inp {
+    font-size: 19px;
+    width: 70vw;
+    margin-bottom: 2vh;
+  }
+  
+  .containerChildButtons {
+    align-self: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .textPlace {
+    width: auto;
+    white-space: normal;
+  }
+
+  .containerDatePrice {
+    width: auto;
+    margin-bottom: 21px;
+  }
+
+  .purch-container {
+    width: auto;
+  }
+
+  .purch-containerRight {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .containerDatePrice {
+    width: auto;
+  }
+
+  .containerMain {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inp {
+    font-size: 19px;
+    width: 70vw;
+    margin-bottom: 2vh;
+  }
+  
+  .containerChildButtons {
+    align-self: center;
+  }
+}
+
