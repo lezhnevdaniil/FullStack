@@ -79,7 +79,7 @@ input {
   font-size: 25px;
 }
 
-.purch-containerTwo {
+.purch-containerRight {
   display: flex;
 }
 
@@ -99,13 +99,13 @@ input {
   font-size: 22px;
 }
 
-.containerChild {
+.containerDatePrice {
   width: 25vw;
   display: flex;
   justify-content: space-around;
 }
 
-.containerChildTwo {
+.containerChildButtons {
   width: auto;
   align-self: center;
   display: flex;
@@ -166,7 +166,7 @@ input {
     text-align: center;
   }
 
-  .purch-containerTwo {
+  .purch-containerRight {
     display: flex;
     flex-direction: row;
   }
@@ -190,7 +190,7 @@ input {
     align-self: flex-end;
   }
 
-  .containerChildTwo {
+  .containerChildButtons {
     width: 8vh;
     display: flex;
     justify-content: space-between;
@@ -279,7 +279,7 @@ input {
     width: auto;
   }
 
-  .containerChild {
+  .containerDatePrice {
     width: auto;
   }
 
@@ -352,7 +352,7 @@ input {
     width: auto;
   }
 
-  .containerChild {
+  .containerDatePrice {
     width: auto;
     display: flex;
     justify-content: space-around;
@@ -372,7 +372,7 @@ input {
     white-space: normal;
   }
 
-  .containerChild {
+  .containerDatePrice {
     width: auto;
     margin-bottom: 21px;
   }
@@ -381,12 +381,12 @@ input {
     width: auto;
   }
 
-  .purch-containerTwo {
+  .purch-containerRight {
     display: flex;
     flex-direction: column;
   }
 
-  .containerChild {
+  .containerDatePrice {
     width: auto;
   }
 
@@ -403,7 +403,7 @@ input {
     margin-bottom: 2vh;
   }
   
-  .containerChildTwo {
+  .containerChildButtons {
     align-self: center;
   }
 }
@@ -414,7 +414,7 @@ input {
     white-space: normal;
   }
 
-  .containerChild {
+  .containerDatePrice {
     width: auto;
     margin-bottom: 21px;
   }
@@ -423,12 +423,12 @@ input {
     width: auto;
   }
 
-  .purch-containerTwo {
+  .purch-containerRight {
     display: flex;
     flex-direction: column;
   }
 
-  .containerChild {
+  .containerDatePrice {
     width: auto;
   }
 
@@ -445,7 +445,7 @@ input {
     margin-bottom: 2vh;
   }
   
-  .containerChildTwo {
+  .containerChildButtons {
     align-self: center;
   }
 }
