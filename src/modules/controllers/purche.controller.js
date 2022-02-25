@@ -22,7 +22,6 @@ module.exports.createNewPurch = (req, res) => {
 module.exports.changePurchInfo = (req, res) => {
   res.set('Access-Control-Allow-Origin', '*');
   const body = req.body;
-  console.log(body.date);
   if (!body.price) {
     body.price = 0;
   };
@@ -33,8 +32,6 @@ module.exports.changePurchInfo = (req, res) => {
     }).catch(err => {
     res.send(err);
   })
-  console.log(body);
-
 };
 
 module.exports.deletePurch = (req, res) => {
